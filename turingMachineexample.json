@@ -1,0 +1,38 @@
+{
+    "Q": ["q0", "q1", "q_accept"],
+    "Σ": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", " "],
+    "Γ": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", " ", "_"],
+    "q0": "q0",
+    "F": ["q_accept"],
+    "transition_table": [
+      {
+        "current_state": "q0",
+        "read_symbol": "A",
+        "next_state": "q1",
+        "write_symbol": "D",
+        "move": "R"
+      },
+      {
+        "current_state": "q0",
+        "read_symbol": "B",
+        "next_state": "q1",
+        "write_symbol": "E",
+        "move": "R"
+      },
+      {
+        "current_state": "q0",
+        "read_symbol": "C",
+        "next_state": "q1",
+        "write_symbol": "F",
+        "move": "R"
+      },
+      {
+        "current_state": "q1",
+        "read_symbol": "_",
+        "next_state": "q_accept",
+        "write_symbol": "_",
+        "move": "N"
+      }
+    ]
+  }
+  
