@@ -1,0 +1,211 @@
+{
+  "Q": [
+    "q_shift",
+    "q_done",
+    "q0"
+  ],
+  "Sigma": [
+    "R",
+    "V",
+    "I",
+    "E",
+    "D",
+    "C",
+    "N",
+    "S",
+    "G",
+    "T",
+    "L",
+    "X",
+    " ",
+    "P",
+    "Y",
+    "A",
+    "Q",
+    "M",
+    "U",
+    "K",
+    "F",
+    "H",
+    "W",
+    "B",
+    "O",
+    "Z",
+    "J"
+  ],
+  "Gamma": [
+    "R",
+    "V",
+    "I",
+    "E",
+    "D",
+    "C",
+    "N",
+    "S",
+    "G",
+    "T",
+    "L",
+    "X",
+    " ",
+    "P",
+    "Y",
+    "A",
+    "Q",
+    "M",
+    "U",
+    "K",
+    "F",
+    "H",
+    "W",
+    "B",
+    "O",
+    "Z",
+    "J"
+  ],
+  "delta": {
+    "('q0', 'B')": [
+      "q_shift",
+      "B",
+      "S"
+    ],
+    "('q_shift', 'A')": [
+      "q_shift",
+      "D",
+      "R"
+    ],
+    "('q_shift', 'B')": [
+      "q_done",
+      "B",
+      "S"
+    ],
+    "('q_shift', 'C')": [
+      "q_shift",
+      "F",
+      "R"
+    ],
+    "('q_shift', 'D')": [
+      "q_shift",
+      "G",
+      "R"
+    ],
+    "('q_shift', 'E')": [
+      "q_shift",
+      "H",
+      "R"
+    ],
+    "('q_shift', 'F')": [
+      "q_shift",
+      "I",
+      "R"
+    ],
+    "('q_shift', 'G')": [
+      "q_shift",
+      "J",
+      "R"
+    ],
+    "('q_shift', 'H')": [
+      "q_shift",
+      "K",
+      "R"
+    ],
+    "('q_shift', 'I')": [
+      "q_shift",
+      "L",
+      "R"
+    ],
+    "('q_shift', 'J')": [
+      "q_shift",
+      "M",
+      "R"
+    ],
+    "('q_shift', 'K')": [
+      "q_shift",
+      "N",
+      "R"
+    ],
+    "('q_shift', 'L')": [
+      "q_shift",
+      "O",
+      "R"
+    ],
+    "('q_shift', 'M')": [
+      "q_shift",
+      "P",
+      "R"
+    ],
+    "('q_shift', 'N')": [
+      "q_shift",
+      "Q",
+      "R"
+    ],
+    "('q_shift', 'O')": [
+      "q_shift",
+      "R",
+      "R"
+    ],
+    "('q_shift', 'P')": [
+      "q_shift",
+      "S",
+      "R"
+    ],
+    "('q_shift', 'Q')": [
+      "q_shift",
+      "T",
+      "R"
+    ],
+    "('q_shift', 'R')": [
+      "q_shift",
+      "U",
+      "R"
+    ],
+    "('q_shift', 'S')": [
+      "q_shift",
+      "V",
+      "R"
+    ],
+    "('q_shift', 'T')": [
+      "q_shift",
+      "W",
+      "R"
+    ],
+    "('q_shift', 'U')": [
+      "q_shift",
+      "X",
+      "R"
+    ],
+    "('q_shift', 'V')": [
+      "q_shift",
+      "Y",
+      "R"
+    ],
+    "('q_shift', 'W')": [
+      "q_shift",
+      "Z",
+      "R"
+    ],
+    "('q_shift', 'X')": [
+      "q_shift",
+      "A",
+      "R"
+    ],
+    "('q_shift', 'Y')": [
+      "q_shift",
+      "B",
+      "R"
+    ],
+    "('q_shift', 'Z')": [
+      "q_shift",
+      "C",
+      "R"
+    ],
+    "('q_shift', ' ')": [
+      "q_shift",
+      " ",
+      "R"
+    ]
+  },
+  "q0": "q_shift",
+  "q_accept": "q_done",
+  "q_reject": null,
+  "blank_symbol": "B"
+}
