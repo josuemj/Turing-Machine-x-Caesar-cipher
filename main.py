@@ -4,33 +4,24 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from model.turingMachineEncrypt import CaesarTuringMachine
+from model.turingMachineDecrypt import CaesarDecryptTuringMachine
+from controller.control import handle_request
 from model.turing_machine import TuringMachine
 
 
-# input format
-# k # message
-w = "3 # ROMA NO FUE CONSTRUIDA EN UN DIA"
+# input format: <mode> <k> # <message>
+# Example for encryption: "encrypt 3 # ROMA NO FUE CONSTRUIDA EN UN DIA"
+# Example for decryption: "decrypt 3 # URPD QR IXH FRQVWUXLFD HQ XQ GLD"
+w = "decrypt 3 # URPD QR IXH FRQVWUXLGD HQ XQ GLD"
+action, k, message = w.split(" ", 2)  # Split mode, k, and message
+k = int(k)
+message = message[2:]  # Remove the '# ' separator
 
-k = int(w[0]) # getting k from w (3)
-message = w[4:len(w)] # getting message (ROMA NO FUE CONSTRUIDA EN UN DIA)
-
-print(f"\nw -> {w}\nk -> {k} \nmessage to encrypt -> {message}\n")
-
-#building turing machgine with k 
-tm_config = CaesarTuringMachine(k).to_json(filename="config/turing_encrypt_k_"+str(k))
-
-#Creating turing machine from json generated above
-tm = TuringMachine(tm_config=tm_config)
-tm.display() # displaya turing machine
-
-#loading input (message)
-tm.load_input(message)
-
-#Running turing machine
-tm.run()
-
-#Showing encrypted message
-encrypted_message = tm.get_tape_contents()
-print("\nEncrypted message:", encrypted_message)
-
-
+# Call handle_request with appropriate Turing machine classes
+result = handle_request(
+     k,
+     CaesarTuringMachine,       # Encryption Turing Machine class
+     CaesarDecryptTuringMachine, # Decryption Turing Machine class
+    message,                   # Message to process
+    action                      # Action to perform: "encrypt" or "decrypt"
+)

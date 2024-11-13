@@ -1,0 +1,211 @@
+{
+  "Q": [
+    "q0",
+    "q_unshift",
+    "q_done"
+  ],
+  "Sigma": [
+    " ",
+    "I",
+    "S",
+    "U",
+    "K",
+    "P",
+    "L",
+    "E",
+    "Q",
+    "R",
+    "B",
+    "N",
+    "T",
+    "A",
+    "Z",
+    "Y",
+    "D",
+    "V",
+    "M",
+    "H",
+    "F",
+    "O",
+    "W",
+    "X",
+    "G",
+    "J",
+    "C"
+  ],
+  "Gamma": [
+    " ",
+    "I",
+    "S",
+    "U",
+    "K",
+    "P",
+    "L",
+    "E",
+    "Q",
+    "R",
+    "B",
+    "N",
+    "T",
+    "A",
+    "Z",
+    "Y",
+    "D",
+    "V",
+    "M",
+    "H",
+    "F",
+    "O",
+    "W",
+    "X",
+    "G",
+    "J",
+    "C"
+  ],
+  "delta": {
+    "('q0', 'B')": [
+      "q_unshift",
+      "B",
+      "S"
+    ],
+    "('q_unshift', 'A')": [
+      "q_unshift",
+      "X",
+      "R"
+    ],
+    "('q_unshift', 'B')": [
+      "q_done",
+      "B",
+      "S"
+    ],
+    "('q_unshift', 'C')": [
+      "q_unshift",
+      "Z",
+      "R"
+    ],
+    "('q_unshift', 'D')": [
+      "q_unshift",
+      "A",
+      "R"
+    ],
+    "('q_unshift', 'E')": [
+      "q_unshift",
+      "B",
+      "R"
+    ],
+    "('q_unshift', 'F')": [
+      "q_unshift",
+      "C",
+      "R"
+    ],
+    "('q_unshift', 'G')": [
+      "q_unshift",
+      "D",
+      "R"
+    ],
+    "('q_unshift', 'H')": [
+      "q_unshift",
+      "E",
+      "R"
+    ],
+    "('q_unshift', 'I')": [
+      "q_unshift",
+      "F",
+      "R"
+    ],
+    "('q_unshift', 'J')": [
+      "q_unshift",
+      "G",
+      "R"
+    ],
+    "('q_unshift', 'K')": [
+      "q_unshift",
+      "H",
+      "R"
+    ],
+    "('q_unshift', 'L')": [
+      "q_unshift",
+      "I",
+      "R"
+    ],
+    "('q_unshift', 'M')": [
+      "q_unshift",
+      "J",
+      "R"
+    ],
+    "('q_unshift', 'N')": [
+      "q_unshift",
+      "K",
+      "R"
+    ],
+    "('q_unshift', 'O')": [
+      "q_unshift",
+      "L",
+      "R"
+    ],
+    "('q_unshift', 'P')": [
+      "q_unshift",
+      "M",
+      "R"
+    ],
+    "('q_unshift', 'Q')": [
+      "q_unshift",
+      "N",
+      "R"
+    ],
+    "('q_unshift', 'R')": [
+      "q_unshift",
+      "O",
+      "R"
+    ],
+    "('q_unshift', 'S')": [
+      "q_unshift",
+      "P",
+      "R"
+    ],
+    "('q_unshift', 'T')": [
+      "q_unshift",
+      "Q",
+      "R"
+    ],
+    "('q_unshift', 'U')": [
+      "q_unshift",
+      "R",
+      "R"
+    ],
+    "('q_unshift', 'V')": [
+      "q_unshift",
+      "S",
+      "R"
+    ],
+    "('q_unshift', 'W')": [
+      "q_unshift",
+      "T",
+      "R"
+    ],
+    "('q_unshift', 'X')": [
+      "q_unshift",
+      "U",
+      "R"
+    ],
+    "('q_unshift', 'Y')": [
+      "q_unshift",
+      "V",
+      "R"
+    ],
+    "('q_unshift', 'Z')": [
+      "q_unshift",
+      "W",
+      "R"
+    ],
+    "('q_unshift', ' ')": [
+      "q_unshift",
+      " ",
+      "R"
+    ]
+  },
+  "q0": "q_unshift",
+  "q_accept": "q_done",
+  "q_reject": null,
+  "blank_symbol": "B"
+}
