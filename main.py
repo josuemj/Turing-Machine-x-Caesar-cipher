@@ -19,16 +19,27 @@ def get_action():
             print("Invalid action. Please enter 'encrypt' or 'decrypt'.\n")
 
 def get_key():
-    """Prompt the user for the shift key and validate it's a positive integer."""
+    """Prompt the user for the shift key as a positive integer or a letter."""
     while True:
-        try:
-            k = int(input("Enter the Caesar cipher shift key (positive integer): ").strip())
+        key_input = input("Enter the Caesar cipher shift key (positive integer or letter): ").strip()
+        
+        if key_input.isdigit():
+            # If input is a digit, ensure it's a positive integer
+            k = int(key_input)
             if k > 0:
                 return k
             else:
                 print("Key must be a positive integer.\n")
-        except ValueError:
-            print("Invalid input. Please enter a positive integer for the key.\n")
+        
+        elif re.match("^[A-Za-z]$", key_input):
+            # If input is a single letter, calculate its position in the alphabet
+            key_letter = key_input.upper()
+            k = ord(key_letter) - ord('A')  # Position in alphabet minus 1
+            return k
+        
+        else:
+            print("Invalid input. Please enter a positive integer or a single letter.\n")
+
 
 def get_message():
     """Prompt the user for the message and ensure it contains only letters and spaces."""
