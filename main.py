@@ -49,6 +49,24 @@ def get_message():
             return message
         else:
             print("Invalid message. Please use letters and spaces only, no numbers or special characters.\n")
+            
+def get_simple_key(k : str):
+    k = k.strip()
+    if k.isdigit():
+        # If input is a digit, ensure it's a positive integer
+        k = int(k)
+        if k > 0:
+            return k
+        else:
+            print("Key must be a positive integer.\n")
+    
+    elif re.match("^[A-Za-z]$", k):
+        # If input is a single letter, calculate its position in the alphabet
+        key_letter = k.upper()
+        k = ord(key_letter) - ord('A')  # Position in alphabet minus 1
+        return k
+    else:
+        print("Invalid input. Please enter a positive integer or a single letter.\n")
 
 # Main script
 if __name__ == "__main__":
