@@ -4,12 +4,13 @@ import string
 class CaesarTuringMachine:
     def __init__(self, k):
         # Define components based on Caesar cipher shift
+        self.blank_symbol = "#"
         self.Q = {"q0", "q_shift", "q_done"}
         self.Sigma = set(string.ascii_uppercase) | {" "}
-        self.Gamma = set(string.ascii_uppercase) | {" ", "B"}
+        self.Gamma = set(string.ascii_uppercase) | {" ", self.blank_symbol}
         self.q0 = "q0"
         self.q_done = "q_done"
-        self.blank_symbol = "B"
+        
         
         # Generate delta (transition function) dynamically for shift k
         self.delta = self.generate_delta(k)
@@ -25,7 +26,7 @@ class CaesarTuringMachine:
         delta = {}
 
         # Transition from 'q0' to 'q_shift' without changing the tape
-        delta[("q0", "B")] = ("q_shift", "B", "S")
+        delta[("q0", self.blank_symbol)] = ("q_shift", self.blank_symbol, "S")
 
         # Create transitions to shift each letter by k positions
         for letter in string.ascii_uppercase:
@@ -36,7 +37,7 @@ class CaesarTuringMachine:
         delta[("q_shift", " ")] = ("q_shift", " ", "R")
         
         # Transition to stop when hitting blank
-        delta[("q_shift", "B")] = ("q_done", "B", "S")
+        delta[("q_shift", self.blank_symbol)] = ("q_done", self.blank_symbol, "S")
         
         return delta
 
@@ -50,7 +51,7 @@ class CaesarTuringMachine:
 
     def load_input(self, message):
         """Loads the input message onto the tape."""
-        self.tape = list(message.upper()) + ["B"]  # Convert message to uppercase
+        self.tape = list(message.upper()) + [self.blank_symbol]  # Convert message to uppercase
         self.head_position = 0
         self.current_state = self.q0
 

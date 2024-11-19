@@ -1,0 +1,32 @@
+message: ROMA NO FUE CONSTRUIDA EN UN DIA
+k = 3
+result: URPD QR IXH FRQVWUXLGD HQ XQ GLD
+encryption test result: PASSED
+message to rdecrypt: URPD QR IXH FRQVWUXLGD HQ XQ GLD
+decrypted message: ROMA NO FUE CONSTRUIDA EN UN DIA
+decryption test result: PASSED
+ 
+message: HOLA MUNDO
+k = B
+result: IPMB NVOEP
+encryption test result: PASSED
+message to rdecrypt: IPMB NVOEP
+decrypted message: HOLA MUNDO
+decryption test result: PASSED
+ 
+message: PROGRAMACION
+k = E
+result: TVSKVEQEGMSR
+encryption test result: PASSED
+message to rdecrypt: TVSKVEQEGMSR
+decrypted message: PROGRAMACION
+decryption test result: PASSED
+ 
+message: CIFRADO CESAR
+k = 1
+result: DJGSBEP DFTBS
+encryption test result: PASSED
+message to rdecrypt: DJGSBEP DFTBS
+decrypted message: CIFRADO CESAR
+decryption test result: PASSED
+ 

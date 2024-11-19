@@ -21,43 +21,69 @@ class Colors:
 samples = {
     # message : [k, ecrypted] #expected
     "ROMA NO FUE CONSTRUIDA EN UN DIA": [3, "URPD QR IXH FRQVWUXLGD HQ XQ GLD"],
-    "HOLA MUNDO": [2, "JQNC OWPFQ"],
+    # "HOLA MUNDO": [2, "JQNC OWPFQ"],
     "HOLA MUNDO": ["B", "IPMB NVOEP"]
+    
 }
 
-for i in samples:
-    print(f'{Colors.HEADER}Message to encrypt (k={samples[i][0]}) -> {i}{Colors.ENDC}')
-    key = get_simple_key(str(samples[i][0]))
+samples = {
+    # message : [k, expected_encrypted_message]
+    "ROMA NO FUE CONSTRUIDA EN UN DIA": [3, "URPD QR IXH FRQVWUXLGD HQ XQ GLD"],
+    "HOLA MUNDO": ["B", "IPMB NVOEP"],
+    "PROGRAMACION": ["E", "TVSKVEQEGMSR"],
+    "CIFRADO CESAR": [1, "DJGSBEP DFTBS"],
+}
 
-    # Encryption test
-    result = handle_request(
-        key,
-        CaesarTuringMachine,       # Encryption Turing Machine class
-        CaesarDecryptTuringMachine,  # Decryption Turing Machine class
-        message=i,                   # Message to process
-        action="encrypt"             # Action to perform: "encrypt" or "decrypt"
-    )
+with open('test_result.txt', 'w') as file:
+    
+    for i in samples:
+        print(f'{Colors.HEADER}Message to encrypt (k={samples[i][0]}) -> {i}{Colors.ENDC}')
+        key = get_simple_key(str(samples[i][0]))
 
-    print(f'{Colors.OKBLUE}Encrypted message -> {result}{Colors.ENDC}')
+        # Encryption test
+        result = handle_request(
+            key,
+            CaesarTuringMachine,       # Encryption Turing Machine class
+            CaesarDecryptTuringMachine,  # Decryption Turing Machine class
+            message=i,                   # Message to process
+            action="encrypt"             # Action to perform: "encrypt" or "decrypt"
+        )
 
-    if result == samples[i][1]:
-        print(f"{Colors.OKGREEN}ENCRYPTION PASSED{Colors.ENDC}")
-    else:
-        print(f"{Colors.FAIL}ENCRYPTION FAILED{Colors.ENDC}")
+        print(f'{Colors.OKBLUE}Encrypted message -> {result}{Colors.ENDC}')
 
-    # Decryption test
-    result_decrypt = handle_request(
-        key,
-        CaesarTuringMachine,       # Encryption Turing Machine class
-        CaesarDecryptTuringMachine,  # Decryption Turing Machine class
-        message=result,             # Message to process
-        action="decrypt"            # Action to perform: "encrypt" or "decrypt"
-    )
+        file.write(f"message: {i}\n")
+        file.write(f"k = {samples[i][0]}\n")
+        file.write(f"result: {result}\n")
 
-    print(f'{Colors.HEADER}Message to decrypt (k={samples[i][0]}) -> {result}{Colors.ENDC}')
-    print(f'{Colors.OKCYAN}Decrypted message -> {result_decrypt}{Colors.ENDC}')
+        if result == samples[i][1]:
+            print(f"{Colors.OKGREEN}ENCRYPTION PASSED{Colors.ENDC}")
+            file.write("encryption test result: PASSED\n")
+        else:
+            print(f"{Colors.FAIL}ENCRYPTION FAILED{Colors.ENDC}")
+            file.write("encryption test result: FAILED\n")
 
-    if result_decrypt == i:
-        print(f"{Colors.OKGREEN}DECRYPTION PASSED{Colors.ENDC}")
-    else:
-        print(f"{Colors.FAIL}DECRYPTION FAILED{Colors.ENDC}")
+
+        # Decryption test
+        result_decrypt = handle_request(
+            key,
+            CaesarTuringMachine,       # Encryption Turing Machine class
+            CaesarDecryptTuringMachine,  # Decryption Turing Machine class
+            message=result,             # Message to process
+            action="decrypt"            # Action to perform: "encrypt" or "decrypt"
+        )
+        
+        file.write(f"message to rdecrypt: {result}\n")
+        file.write(f"decrypted message: {result_decrypt}\n")
+
+        print(f'{Colors.HEADER}Message to decrypt (k={samples[i][0]}) -> {result}{Colors.ENDC}')
+        print(f'{Colors.OKCYAN}Decrypted message -> {result_decrypt}{Colors.ENDC}')
+
+        if result_decrypt == i:
+            print(f"{Colors.OKGREEN}DECRYPTION PASSED{Colors.ENDC}")
+            file.write("decryption test result: PASSED\n \n")
+
+        else:
+            print(f"{Colors.FAIL}DECRYPTION FAILED{Colors.ENDC}")
+            file.write("decryption test result: FAILED\n \n")
+    
+        
